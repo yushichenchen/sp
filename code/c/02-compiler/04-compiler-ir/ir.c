@@ -56,23 +56,3 @@ void irDump() {
     irPrint(&ir[i]);
   }
 }
-/*
-int irExec(IR p) {
-  if (eq(p->op, "s=t")) printf("%s = T%d", p->s, p->t);
-  else if (eq(p->op, "t=s")) printf("T%d = %s", p->t, p->s);
-  else if (eq(p->op, "label")) printf("(L%d)", p->label);
-  else if (eq(p->op, "goto")) printf("goto L%d", p->label);
-  else if (eq(p->op, "if-goto")) printf("if T%d goto L%d", p->t, p->label);
-  else if (eq(p->op, "ifnot-goto")) printf("ifnot T%d goto L%d", p->t, p->label);
-  else printf("t%d = t%d %s t%d", p->t, p->t1, p->op, p->t2);
-  printf("\n");
-}
-
-void irRun() {
-  int pc = 0;
-  for (int i=0; i<irTop; i++) {
-    pc = irExec(&ir[i]);
-  }
-}
-
-*/

@@ -1,0 +1,6 @@
+A=0
+M=1
+D=M
+(LOOP)
+D=D+M
+M=D

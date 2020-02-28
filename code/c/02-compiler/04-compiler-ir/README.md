@@ -1,9 +1,9 @@
 # compiler
 
 ```
-PS D:\ccc\book\sp\code\c\02-compiler\04-compiler-ir> make
-gcc -std=c99 -O0 lexer.c compiler.c main.c ir.c -o compiler
-PS D:\ccc\book\sp\code\c\02-compiler\04-compiler-ir> ./compiler test/sum.c
+PS D:\ccc\course\sp\code\c\02-compiler\04-compiler-ir> make
+gcc -std=c99 -O0 ir.c lexer.c compiler.c main.c -o compiler
+PS D:\ccc\course\sp\code\c\02-compiler\04-compiler-ir> ./compiler test/sum.c 
 
 s=0;
 i=1;
