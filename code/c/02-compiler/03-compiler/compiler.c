@@ -74,7 +74,7 @@ void ASSIGN() {
   emit("%s = t%d\n", id, e);
 }
 
-// while (E) STMT
+// WHILE = while (E) STMT
 void WHILE() {
   int whileBegin = nextLabel();
   int whileEnd = nextLabel();
@@ -89,6 +89,7 @@ void WHILE() {
   emit("(L%d)\n", whileEnd);
 }
 
+// STMT = WHILE | BLOCK | ASSIGN
 void STMT() {
   if (isNext("while"))
     return WHILE();
@@ -100,19 +101,21 @@ void STMT() {
     ASSIGN();
 }
 
+// STMTS = STMT*
 void STMTS() {
   while (!isEnd() && !isNext("}")) {
     STMT();
   }
 }
 
-// { STMT* }
+// BLOCK = { STMTS }
 void BLOCK() {
   skip("{");
   STMTS();
   skip("}");
 }
 
+// PROG = STMTS
 void PROG() {
   STMTS();
 }

@@ -1,5 +1,20 @@
 # Compiler
 
+## 語法
+
+```
+PROG = STMTS
+BLOCK = { STMTS }
+STMTS = STMT*
+STMT = WHILE | BLOCK | ASSIGN
+WHILE = while (E) STMT
+ASSIGN = id '=' E;
+E = F (op E)*
+F = (E) | Number | Id
+```
+
+## 執行結果
+
 ```
 user@DESKTOP-96FRN6B MINGW64 /d/ccc/book/sp/code/c/02-compiler/03-compiler
 $ make clean
